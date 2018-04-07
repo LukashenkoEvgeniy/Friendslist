@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import './styles/index.scss';
 import PropTypes from 'prop-types';
 import { createStore } from 'redux'
 import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import FriendsListContainer from "./friendsList/FriendsListContainer";
+import {FriendsList} from './FriendsList'
 
-export default class App extends Component{
+export default class FriendsListContainer extends Component{
 
     render() {
         return (
-          <FriendsListContainer/>
+            <FriendsList/>
         );
     }
 }
