@@ -60,6 +60,8 @@
     "react-dom": "^16.4.0-alpha.0911da3",
     "react-redux": "^5.0.7",
     "reactstrap": "^5.0.0-beta.3",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
   }
 }

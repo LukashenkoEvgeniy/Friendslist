@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import {FriendsListItemAvatar} from "./FriendsListItemAvatar";
 import {FriendsListItemBody} from "./FriendsListItemBody";
 
-export const FriendsListItem = props => {
+export const FriendsListItem = ({item}) => {
     return (
         <div>
             <FriendsListItemAvatar/>
-            <FriendsListItemBody/>
+            <FriendsListItemBody name={item.name}/>
         </div>
     )
 };

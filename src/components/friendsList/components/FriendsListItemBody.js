@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const  FriendsListItemBody = props => {
+export const  FriendsListItemBody = ({name}) => {
  return(
-     <div>Body</div>
+     <div>{name}</div>
 )
 };
