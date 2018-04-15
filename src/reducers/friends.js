@@ -24,7 +24,7 @@ export default function friends(state = initialState, action) {
                 ...state,
                 friends: state.friends.filter(id => id !== action.id),
                 friendsList: omit(state.friendsList, action.id)
-            }
+            };
 
         default:
             return state;
