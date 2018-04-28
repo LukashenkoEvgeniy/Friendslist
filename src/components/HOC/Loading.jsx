@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 
 const mapStateToProps = state => ({
-    loaded: state.friendlist.loaded
+    loaded: state.loading.loaded
 });
 
 export default function Loading(WrappedComponent) {
@@ -15,9 +15,6 @@ export default function Loading(WrappedComponent) {
                 loaded ? <WrappedComponent {...this.props}/> : <p>Loading...</p>
             )
         }
-
     }
-
     return WrapComponent
-
 };

@@ -8,7 +8,6 @@ const initialState = {
         // {id:4, name:'Kerem Suer', avatar:"https://media.licdn.com/dms/image/C5603AQGYq6NO1OZDIg/profile-displayphoto-shrink_800_800/0?e=1528974000&v=beta&t=-_7V7xdd5TE5lTrtjoaos_V7MlvNAr0AMwIz54jEhxw"},
         // {id:5, name:'Raquel Parrado', avatar:"https://media.licdn.com/dms/image/C4E03AQHg07dpZI2ytA/profile-displayphoto-shrink_800_800/0?e=1528974000&v=beta&t=jUMsUPgIoubjcLimn5_msoe7NiQOnjfTg6pTHrH2vO8"}
         ],
-    loaded: false
 };
 
 export default function friends(state = initialState, action) {
@@ -27,11 +26,6 @@ export default function friends(state = initialState, action) {
                 friendsList: omit(state.friendsList, action.id)
             };
 
-        case types.LOADED:
-            return {
-                ...state,
-                loaded:true
-            };
         default:
             return state;
     }
