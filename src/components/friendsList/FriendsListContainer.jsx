@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
     friendlist: state.friendlist
 });
 
-const WithLoading = Loading(FriendsList);
+const FriendsListWithLoading = Loading(FriendsList);
 
 @connect(mapStateToProps)
 export default class FriendsListContainer extends Component {
@@ -20,6 +20,7 @@ export default class FriendsListContainer extends Component {
 
     componentWillMount() {
         const {dispatch} = this.props;
+        console.log(this.props.match.params.user)
         dispatch(getFriendsListFromApi());
     }
 
@@ -29,7 +30,7 @@ export default class FriendsListContainer extends Component {
         const actions = bindActionCreators(FriendsActions, dispatch);
 
         return (
-                <WithLoading
+                <FriendsListWithLoading
                     addFriend={actions.addFriend}
                     list={friendsList}
                 />

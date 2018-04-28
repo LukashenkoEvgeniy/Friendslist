@@ -6,12 +6,16 @@ import Avatar from 'material-ui/Avatar';
 import Badge from 'material-ui/Badge';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import {Link} from 'react-router-dom'
 
 export const FriendsList = ({addFriend, list}) => (
-        <List>
-            <Subheader>Recent chats</Subheader>
+    <List>
+        <Subheader>Recent chats</Subheader>
 
-            {list.map(item => (
+        {list.map(item => (
+            <Link
+                to={`/user/${ item.id }`}
+            >
                 <ListItem
                     key={item.id}
                     primaryText={item.name}
@@ -23,9 +27,10 @@ export const FriendsList = ({addFriend, list}) => (
                         />
                     }
                 />
-            ))}
+            </Link>
+        ))}
 
-            {/*<button onClick={addFriend('Test')}>Add</button>*/}
+        {/*<button onClick={addFriend('Test')}>Add</button>*/}
 
-        </List>
+    </List>
 );
