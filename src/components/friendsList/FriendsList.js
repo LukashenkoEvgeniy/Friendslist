@@ -8,23 +8,24 @@ import Favorite from 'material-ui/svg-icons/action/favorite';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 
 export const FriendsList = ({addFriend, list}) => (
+        <List>
+            <Subheader>Recent chats</Subheader>
 
-    <List>
-        <Subheader>Recent chats</Subheader>
+            {list.map(item => (
+                <ListItem
+                    key={item.id}
+                    primaryText={item.name}
+                    leftAvatar={<Avatar src={item.avatar}/>}
+                    rightIcon={
+                        <Favorite
+                            color={blue500}
+                            hoverColor={red500}
+                        />
+                    }
+                />
+            ))}
 
-        {list.map(item => (
-            <ListItem
-                key={item.id}
-                primaryText={item.name}
-                leftAvatar={<Avatar src={item.avatar}/>}
-                rightIcon={
-                    <Favorite
-                        color={blue500}
-                        hoverColor={red500}
-                    />
-                }
-            />
-        ))}
+            {/*<button onClick={addFriend('Test')}>Add</button>*/}
 
-    </List>
+        </List>
 );

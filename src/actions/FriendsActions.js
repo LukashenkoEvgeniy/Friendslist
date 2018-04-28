@@ -1,4 +1,5 @@
 import * as types from '../constants/ActionTypes';
+import {getFriendsListFromAPI} from "../api/friendsApi";
 
 export function addFriend(name, avatar) {
     return {
@@ -8,6 +9,11 @@ export function addFriend(name, avatar) {
     };
 }
 
+export function loadedFriendsList() {
+    return {
+        type: types.LOADED,
+    };
+}
 
 
 export function deleteFriend(id) {
@@ -17,10 +23,11 @@ export function deleteFriend(id) {
     };
 }
 
-
+//midleware
 export const getFriendsListFromApi = () => dispatch =>  {
-    setTimeout(() => {
-        console.log('getFriendsListFromApi')
-        dispatch(addFriend("From server", "https://media.licdn.com/dms/image/C4E03AQGdgSxouy_zfQ/profile-displayphoto-shrink_800_800/0?e=1528974000&v=beta&t=IJeYGyuXJ_h9KlOBQfBd0Vc7mrz6FJy09-LusDgo79E"))
-    }, 2000)
-}
+    getFriendsListFromAPI()
+        .then((friendsList)=> {
+            friendsList.forEach((listItem)=>dispatch(addFriend(listItem.name, listItem.avatar)))
+            dispatch(loadedFriendsList())
+        });
+};
