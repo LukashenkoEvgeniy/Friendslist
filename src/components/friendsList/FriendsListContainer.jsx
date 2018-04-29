@@ -20,7 +20,7 @@ export default class FriendsListContainer extends Component {
 
     componentWillMount() {
         const {dispatch} = this.props;
-        console.log(this.props.match.params.user)
+        // console.log(this.props.match.params.user)
         dispatch(getFriendsListFromApi());
     }
 

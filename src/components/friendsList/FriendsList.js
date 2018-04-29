@@ -3,10 +3,9 @@ import React from 'react';
 import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
-import Badge from 'material-ui/Badge';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-3'
 
 export const FriendsList = ({addFriend, list}) => (
     <List>
@@ -14,6 +13,7 @@ export const FriendsList = ({addFriend, list}) => (
 
         {list.map(item => (
             <Link
+                key={item.id}
                 to={`/user/${ item.id }`}
             >
                 <ListItem
