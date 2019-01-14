@@ -84,7 +84,11 @@
 //    "react/jsx-tag-spacing": 0, // Validate whitespace in and around the JSX opening and closing brackets (fixable)
 //    "react/jsx-wrap-multilines": 2 // Prevent missing parentheses around multilines JSX (fixable)
 //  },
-
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
 
   "plugins": [
     "react",

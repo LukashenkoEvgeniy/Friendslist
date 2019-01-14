@@ -7,6 +7,8 @@ import {bindActionCreators} from 'redux';
 import {getFriendsListFromApi} from "../../actions/FriendsActions";
 import Loading from "../HOC/Loading";
 
+import Worker from './../../workers/list.worker.js';
+
 
 const mapStateToProps = state => ({
     friendlist: state.friendlist
@@ -15,7 +17,7 @@ const mapStateToProps = state => ({
 const FriendsListWithLoading = Loading(FriendsList);
 
 @connect(mapStateToProps)
-export default class FriendsListContainer extends Component {
+export class FriendsListContainer extends Component {
 
 
     componentWillMount() {
@@ -28,6 +30,16 @@ export default class FriendsListContainer extends Component {
 
         const {friendlist: {friendsList}, dispatch} = this.props;
         const actions = bindActionCreators(FriendsActions, dispatch);
+
+        let worker = new Worker();
+        worker.postMessage({ a: 1 });
+        worker.onmessage = function (event) {
+            console.log('onmessage', event)
+        };
+        worker.addEventListener("message", function (event) {
+            console.log('message', event)
+
+        });
 
         return (
                 <FriendsListWithLoading
