@@ -1,11 +1,17 @@
 import * as types from '../constants/ActionTypes';
 import {getFriendsListFromAPI} from "../api/friendsApi";
 
-export function addFriend(name, avatar) {
+export function addFriend(person) {
     return {
         type: types.ADD_FRIEND,
-        name,
-        avatar
+        person
+    };
+}
+
+export function addFriendsList(list) {
+    return {
+        type: types.ADD_FRIENDS_LISTS,
+        list
     };
 }
 
@@ -27,7 +33,7 @@ export function deleteFriend(id) {
 export const getFriendsListFromApi = () => dispatch =>  {
     getFriendsListFromAPI()
         .then((friendsList)=> {
-            friendsList.forEach((listItem)=>dispatch(addFriend(listItem.name, listItem.avatar)))
+             dispatch(addFriendsList(friendsList));
             dispatch(loadedFriendsList())
         });
 };

@@ -1,4 +1,5 @@
-self.postMessage({ foo: 'foo' })
-
 // Respond to message from parent thread
-self.addEventListener('message', (event) => console.log(event))
+self.addEventListener('message', ({data}) => {
+    let result = data.list.sort((a, b) => b.id - a.id);
+    self.postMessage({ list: result })
+})
