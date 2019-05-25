@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{273:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var u,r=t(1),i=(u=r)&&u.__esModule?u:{default:u},d=t(48);n.default=(0,d.connect)(function(e,n){return{user:e.friendlist.friendsList.find(function(e){return e.id===Number(n.params.id)})}})(function(e){var n=e.user;return i.default.createElement("p",null,n.name)})}}]);
+//# sourceMappingURL=0.bundle.js.map
