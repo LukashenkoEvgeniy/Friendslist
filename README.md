@@ -3,7 +3,7 @@
 ## About
 Example of using material-ui with react and Redux
 
-![](./src/assets/Friendslist_presentation.gif)
+![](./src/assets/FriendsList_presentation.gif)
 
 ## Demo
 
