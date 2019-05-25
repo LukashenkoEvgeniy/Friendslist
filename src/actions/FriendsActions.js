@@ -1,3 +1,5 @@
+// @flow
+
 import * as types from '../constants/ActionTypes';
 import {getFriendsListFromAPI} from "../api/friendsApi";
 
@@ -8,7 +10,7 @@ export function addFriend(person) {
     };
 }
 
-export function addFriendsList(list) {
+export function addFriendsList(list: array) {
     return {
         type: types.ADD_FRIENDS_LISTS,
         list

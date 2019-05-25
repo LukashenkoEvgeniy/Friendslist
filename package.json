@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --config ./webpack.base.conf.js --mode development",
     "build": "webpack --config ./webpack.base.conf.js --mode production",
     "test": "echo \"No test specified\" && exit 0",
-    "eslint": "eslint  --fix ./src"
+    "eslint": "eslint  --fix ./src",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "@babel/runtime": "^7.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "@babel/preset-flow": "^7.0.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -45,6 +47,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
     "extract-text-webpack-plugin": "^3.0.2",
+    "flow-bin": "^0.90.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
